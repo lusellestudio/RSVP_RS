@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6f1d45">
+<title>Roberto & Shella — Wedding RSVP</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <img class="hero-photo" alt="Roberto and Shella wedding" src="images/wedding-photo.jpg">
+  <div class="hero-content">
+    <div class="eyebrow">Wedding RSVP</div>
+    <h1>Roberto <span class="amp">&amp;</span><br>Shella</h1>
+    <div class="hero-date">October 23, 2026 · 3:00 PM</div>
+    <p class="hero-sub">We would be honored to celebrate this beautiful beginning with you. Kindly confirm your attendance below.</p>
+    <a class="scroll-cue" href="#rsvp">Find Your Invitation ↓</a>
+  </div>
+</header>
+
+<main id="rsvp">
+  <section class="intro wrap">
+    <div class="ornament">✦ ✦ ✦</div>
+    <h2>Will you join us?</h2>
+    <p>Search for your name exactly as it appears on your invitation. Once selected, your reserved number of seats will be shown automatically.</p>
+  </section>
+
+  <section class="card wrap">
+    <div id="searchStep">
+      <div class="step-label">Step 01</div>
+      <h3>Find your invitation</h3>
+      <p class="helper">Start typing your name. You may use your first name, last name, or any part of your listed name.</p>
+
+      <div class="search-row">
+        <input id="nameSearch" class="input" type="search" autocomplete="off" placeholder="e.g. Roberto Dela Cruz">
+        <button id="searchBtn" class="search-btn" type="button">Search</button>
+      </div>
+      <div id="searchStatus" class="status" aria-live="polite"></div>
+      <div id="results" class="results"></div>
+    </div>
+
+    <div id="formStep" class="hidden">
+      <div class="step-label">Step 02</div>
+      <h3>Your RSVP</h3>
+      <p class="helper">Please review your invitation details and let us know whether you can celebrate with us.</p>
+
+      <div id="selectedGuest" class="selected"></div>
+
+      <form id="rsvpForm">
+        <div class="field">
+          <label>Will you be attending? <span class="required">*</span></label>
+          <div class="attendance">
+            <div class="radio-card">
+              <input id="attendingYes" name="attendance" value="yes" type="radio">
+              <label for="attendingYes">Joyfully accepts<small>I/we will be there.</small></label>
+            </div>
+            <div class="radio-card">
+              <input id="attendingNo" name="attendance" value="no" type="radio">
+              <label for="attendingNo">Regretfully declines<small>I/we won't be able to attend.</small></label>
+            </div>
+          </div>
+        </div>
+
+        <div id="seatsField" class="field">
+          <label for="confirmedSeats">Number of seats attending <span class="required">*</span></label>
+          <select id="confirmedSeats" class="input"></select>
+          <div id="seatNote" class="seat-note"></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="message">A message for the couple <span style="font-weight:400;color:#927f88">(optional)</span></label>
+            <textarea id="message" class="input" maxlength="500" placeholder="Leave us a little note..."></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="songRequest">Song request <span style="font-weight:400;color:#927f88">(optional)</span></label>
+            <input id="songRequest" class="input" maxlength="150" placeholder="What song would get you on the dance floor?">
+          </div>
+        </div>
+
+        <div id="formStatus" class="status" aria-live="polite"></div>
+
+        <div class="submit-area">
+          <button id="submitBtn" class="submit-btn" type="submit">Submit RSVP</button>
+          <p class="fine-print">By submitting, you confirm that the information above is accurate and may be recorded for wedding planning purposes.</p>
+        </div>
+      </form>
+    </div>
+
+    <div id="confirmationStep" class="confirmation hidden">
+      <div class="check">✓</div>
+      <h3 id="confirmationTitle">Thank you!</h3>
+      <p id="confirmationText"></p>
+      <button class="reset" id="newRsvpBtn" type="button">Return to RSVP</button>
+    </div>
+  </section>
+</main>
+
+<footer>With love, Roberto &amp; Shella · October 23, 2026</footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
